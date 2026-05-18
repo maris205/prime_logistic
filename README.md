@@ -103,9 +103,9 @@ If you use this code, please cite:
 @article{wang2026emergence_prime_chaos,
   title   = {The Emergence of Prime Distribution from Low-Dimensional Deterministic Chaos},
   author  = {Wang, Liang},
-  journal = {Research in Mathematics},
+  journal = {Research in Mathematics (in review)},
   year    = {2026},
-  note    = {Ms. No. 263595999}
+  note    = {Manuscript ID 263595999, under review}
 }
 ```
 
