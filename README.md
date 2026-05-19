@@ -2,9 +2,13 @@
 
 This repository contains the full set of Jupyter notebooks used to generate every quantitative figure in the paper:
 
-> Liang Wang. **The Emergence of Prime Distribution from Low-Dimensional Deterministic Chaos.** *Research in Mathematics*, 2026 (Ms. No. 263595999).
+> Liang Wang. **The Emergence of Prime Distribution from Low-Dimensional Deterministic Chaos.** *Research in Mathematics (in review)*, 2026 (Ms. No. 263595999).
 
 Each notebook is self-contained: just open it (locally or in **Google Colab**, see badges below) and run all cells. The notebooks reproduce the exact figures shown in the paper.
+
+![Core research framework](figs/fig1.jpg)
+
+*Figure 1 of the paper — the theoretical pathway from the arithmetic sieve to symbolic sequences, mapped to deterministic orbits of the Logistic chaotic attractor. This is the conceptual backbone that every notebook below verifies on a different observable.*
 
 ---
 
@@ -13,11 +17,11 @@ Each notebook is self-contained: just open it (locally or in **Google Colab**, s
 | # | Notebook | Paper figure | Open in Colab |
 |---|---|---|---|
 | 1 | [`fig3-logistic_map.ipynb`](fig3-logistic_map.ipynb) | Fig. 3 — Symbolic partition of the Logistic map | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maris205/prime_logistic/blob/main/fig3-logistic_map.ipynb) |
-| 2 | [`fig4-logistic_map_line.ipynb`](fig4-logistic_map_line.ipynb) | Fig. 4 — Physical localization of the prime sieve in the bifurcation diagram | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maris205/prime_logistic/blob/main/fig4-logistic_map_line.ipynb) |
+| 2 | [`fig4-logistic_map_line.ipynb`](fig4-logistic_map_line.ipynb) | Fig. 4 — Physical localization of the prime sieve | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maris205/prime_logistic/blob/main/fig4-logistic_map_line.ipynb) |
 | 3 | [`fig5-discrete_gap_spectrum.ipynb`](fig5-discrete_gap_spectrum.ipynb) | Fig. 5 — Discrete gap spectra (primes vs. Logistic vs. Cramér) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maris205/prime_logistic/blob/main/fig5-discrete_gap_spectrum.ipynb) |
 | 4 | [`fig6-max_lyapunov_exponent.ipynb`](fig6-max_lyapunov_exponent.ipynb) | Fig. 6 — Maximal Lyapunov exponent | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maris205/prime_logistic/blob/main/fig6-max_lyapunov_exponent.ipynb) |
 | 5 | [`fig7-block_entropy.ipynb`](fig7-block_entropy.ipynb) | Fig. 7 — Block entropy and entropy rate | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maris205/prime_logistic/blob/main/fig7-block_entropy.ipynb) |
-| 6 | [`fig8-twin_prime_density_logistic.ipynb`](fig8-twin_prime_density_logistic.ipynb) | Fig. 8 — Intrinsic invariant measure (twin-prime density) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maris205/prime_logistic/blob/main/fig8-twin_prime_density_logistic.ipynb) |
+| 6 | [`fig8-twin_prime_density_logistic.ipynb`](fig8-twin_prime_density_logistic.ipynb) | Fig. 8 — Twin-prime density (L-R-L pattern) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maris205/prime_logistic/blob/main/fig8-twin_prime_density_logistic.ipynb) |
 | 7 | [`fig9-twin_prime_constant.ipynb`](fig9-twin_prime_constant.ipynb) | Fig. 9 — Convergence to the twin-prime constant | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maris205/prime_logistic/blob/main/fig9-twin_prime_constant.ipynb) |
 | 8 | [`fig10-cramer_test.ipynb`](fig10-cramer_test.ipynb) | Fig. 10 — Test of Cramér's conjecture under the chaotic model | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/maris205/prime_logistic/blob/main/fig10-cramer_test.ipynb) |
 
@@ -29,47 +33,33 @@ We model the prime distribution as the symbolic dynamics of a one-dimensional no
 
 ---
 
-## Contents
+## Highlighted results
 
-### `fig3-logistic_map.ipynb` — Fig. 3
-Bifurcation diagram of the Logistic map x → 1 − u x², colored by the symbolic partition: trajectories with x > 0 are encoded as **R (composite-like)** and shown in **blue**; trajectories with x < 0 are encoded as **L (prime-like)** and shown in **red**. The dashed line marks the critical point x_c = 0.
+The repository ships eight notebooks; the four figures below are the headline results. The remaining four (Lyapunov exponent, block entropy, L-R-L density, twin-prime constant) are auxiliary diagnostics — open the corresponding `.ipynb` directly if you want to reproduce them.
+
+### Fig. 3 — Symbolic partition of the Logistic map
 
 ![Fig 3](figs/fig3-logistic_map.png)
 
-### `fig4-logistic_map_line.ipynb` — Fig. 4
-Two-panel bifurcation diagram. The left panel shows the full range u ∈ [0.5, 2.0]; the right panel zooms into u ∈ [1.44, 1.56]. Three vertical reference lines are overlaid at u = 1.250 (period-2), u ≈ 1.476 (high-order period associated with the introduction of the prime 3) and u ≈ 1.5437 (band-merging / edge-of-chaos limit). This plot makes the correspondence between sieve stages and dynamical states explicit.
+Bifurcation diagram of x → 1 − u x², colored by the symbolic partition. Trajectories with x > 0 are encoded as **R (composite-like)** and shown in **blue**; trajectories with x < 0 are encoded as **L (prime-like)** and shown in **red**. The dashed line marks the critical point x_c = 0. → [`fig3-logistic_map.ipynb`](fig3-logistic_map.ipynb)
+
+### Fig. 4 — Physical localization of the prime sieve
 
 ![Fig 4](figs/fig4-logistic_map_line.png)
 
-### `fig5-discrete_gap_spectrum.ipynb` — Fig. 5
-Discrete gap spectra of (i) real primes after renormalization, (ii) the Logistic-map orbit, (iii) the classical Cramér stochastic model. The needle structure of the prime spectrum is reproduced by the chaotic model but **not** by the stochastic model.
+Two-panel bifurcation diagram. The right panel zooms into u ∈ [1.44, 1.56] with three reference lines at u = 1.250 (period-2, sieve stage k=1), u ≈ 1.476 (high-order period, k=2 — introduction of prime 3), and u ≈ 1.5437 (band-merging / edge-of-chaos limit, k → ∞). Each prime sieve stage corresponds to a precisely determined u value. → [`fig4-logistic_map_line.ipynb`](fig4-logistic_map_line.ipynb)
+
+### Fig. 5 — Discrete gap spectra
 
 ![Fig 5](figs/fig5-discrete_gap_spectrum.png)
 
-### `fig6-max_lyapunov_exponent.ipynb` — Fig. 6
-Maximal Lyapunov exponent estimated by an improved Rosenstein algorithm (Theiler-window corrected, embedding dimension m = 6). Both the prime gap series and the Logistic orbit yield λ ≈ 0.1 (weak chaos), while a matched random control diverges to ∞.
+Discrete gap spectra of (a) renormalized real primes and (b) the Logistic-map orbit at u_c. Both spectra exhibit the same needle structure with resonance peaks at multiples of 6 (g = 6, 12, 18, …) and statistical correlation > 0.99. The classical Cramér stochastic model produces only a smooth exponential and cannot reproduce this discrete arithmetic rigidity. → [`fig5-discrete_gap_spectrum.ipynb`](fig5-discrete_gap_spectrum.ipynb)
 
-![Fig 6](figs/fig6-max_lyapunov_exponent.png)
-
-### `fig7-block_entropy.ipynb` — Fig. 7
-Block entropy H(k) and entropy rate h(k) = H(k+1) − H(k) for prime gaps and Logistic symbols. Both sequences converge to the same finite KS-entropy plateau, distinguishing them from periodic systems (h → 0) and from i.i.d. noise (h → 1).
-
-![Fig 7](figs/fig7-block_entropy.png)
-
-### `fig8-twin_prime_density_logistic.ipynb` — Fig. 8
-Density of the L-R-L pattern (the twin-prime analogue) along the Logistic orbit at the edge-of-chaos parameter, compared with the random-product baseline P(L)·P(R)·P(L). The chaotic model reproduces the empirical excess of twin events.
-
-![Fig 8](figs/fig8-twin_prime_density.png)
-
-### `fig9-twin_prime_constant.ipynb` — Fig. 9
-Long-run convergence of the twin-prime density estimator under the integral-corrected, non-autonomous Logistic flow towards the Hardy–Littlewood twin-prime constant 0.66016…, reaching this value spontaneously without any manual correction factor.
-
-![Fig 9](figs/fig9-twin_prime_constant.jpeg)
-
-### `fig10-cramer_test.ipynb` — Fig. 10
-Comparison between the renormalized prime-gap distribution, the Logistic-aging model (this work), the static Logistic model, and the theoretical exp(−x) of Cramér. The aging chaotic model matches the empirical primes essentially perfectly across four decades on a log scale, while the unaged static model fails.
+### Fig. 10 — Test of Cramér's conjecture
 
 ![Fig 10](figs/fig10-cramer_test.png)
+
+Probability density of normalized gaps g/⟨g⟩ on a log scale. The aging chaotic model (green) collapses essentially perfectly onto the exponential e^{−x} predicted by Cramér's conjecture (red dashed) and matches the real-prime histogram (blue) over four decades. The unaged static model (gray dotted) fails. → [`fig10-cramer_test.ipynb`](fig10-cramer_test.ipynb)
 
 ---
 
